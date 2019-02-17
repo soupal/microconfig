@@ -1,0 +1,78 @@
+spring:
+  profiles:
+    active:
+    - dev
+---
+server:
+  port: 8001
+eureka:
+  client:       # 客户端进行Eureka注册的配置
+    service-url:
+      defaultZone: http://edmindev:edmindev@eureka-7001.com:7001/eureka
+  instance:                 # eureka实例定义
+    lease-expiration-duration-in-seconds: 5  # 设置心跳的失效时间（默认是90秒）
+    lease-renewal-interval-in-seconds: 2     #  发送心跳的间隔时间 （默认是30秒）
+    instance-id: dept-8001.com   # 在信息列表中显示主机名称
+    prefer-ip-address: true      # 访问的路径变为IP地址
+info:
+  app.name: my-microcloud-dept8001
+  company.name: www.darren.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml
+  type-aliases-package: com.spring.myspringcloud.api.vo
+  mapper-locations:
+  - classpath:mybatis/mapper/**/*.xml
+spring: 
+  profiles: dev 
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mldn8001
+    username: root
+    password: root
+    dbcp2:
+      min-idle: 5
+      initial-size: 5
+      max-idle: 5
+      max-wait-millis: 200 
+  application:
+    name: microcloud-config-dept-client
+---
+server:
+  port: 8001
+eureka:
+  client:       # 客户端进行Eureka注册的配置
+    service-url:
+      defaultZone: http://edminbeta:edminbeta@eureka-7001.com:7001/eureka
+  instance:                 # eureka实例定义
+    lease-expiration-duration-in-seconds: 5  # 设置心跳的失效时间（默认是90秒）
+    lease-renewal-interval-in-seconds: 2     #  发送心跳的间隔时间 （默认是30秒）
+    instance-id: dept-8001.com   # 在信息列表中显示主机名称
+    prefer-ip-address: true      # 访问的路径变为IP地址
+info:
+  app.name: my-microcloud-dept8001
+  company.name: www.darren.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml
+  type-aliases-package: com.spring.myspringcloud.api.vo
+  mapper-locations:
+  - classpath:mybatis/mapper/**/*.xml
+spring: 
+  profiles: beta 
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mldn8001
+    username: root
+    password: root
+    dbcp2:
+      min-idle: 5
+      initial-size: 5
+      max-idle: 5
+      max-wait-millis: 200 
+  application:
+    name: microcloud-config-dept-client
