@@ -31,7 +31,7 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3306/mldn8001
     username: root
-    password: root
+    password: '{cipher}063da2292f46e07fecfb474ce246c8fceff4841eb780dd8acae5eeda520798b2'
     dbcp2:
       min-idle: 5
       initial-size: 5
@@ -68,7 +68,7 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3306/mldn8001
     username: root
-    password: root
+    password: '{cipher}063da2292f46e07fecfb474ce246c8fceff4841eb780dd8acae5eeda520798b2'
     dbcp2:
       min-idle: 5
       initial-size: 5
