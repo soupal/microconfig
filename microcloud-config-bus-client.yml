@@ -29,6 +29,6 @@ eureka:
     service-url:
       defaultZone: http://edmin:edmin@eureka-7301.com:7301/eureka
 info:
-  app.name: myspringcloud-beta-2
+  app.name: myspringcloud-beta-3
   company.name: www.spring.io
-  app.version: v-beta-2.0.0
+  app.version: v-beta-3.0.0
